@@ -1,0 +1,39 @@
+L0:
+a(main):=3
+b(main):=4
+c(main):=2
+push a(main)
+push b(main)
+push c(main)
+pop T0
+push T0
+pop T1
+a(main):=T1
+ret 
+L1:
+pop c
+pop b
+pop a
+i(program):=0
+T2:=b(program)+c(program)
+if a(program)>T2 goto L2
+goto L3
+L2:T3:=b(program)*c(program)
+T4:=T3+1
+T5:=a(program)+T4
+j(program):=T5
+goto L4
+L3:j(program):=a(program)
+L4:L5:if i(program)<=100 goto L6
+goto L7
+L6:T6:=j(program)*2
+i(program):=T6
+goto L5
+L7:ret i(program)
+L8:
+pop a
+T7:=a(demo)+2
+a(demo):=T7
+T8:=a(demo)*2
+ret T8
+
